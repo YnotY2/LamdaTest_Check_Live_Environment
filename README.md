@@ -80,30 +80,29 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
 ```bash
  Sending requests for the devices available-devices LambdaTest live data...
  Currently requesting status for the following Devices:
- Device: 'Huawei P20 Pro'
- Device: 'Huawei P30'
- Device: 'Huawei P30 Pro'
- Device: 'Huawei Mate 20 Pro'
- Device: 'Oppo A15'
- Device: 'Oppo F17'
+    Device;  "Galaxy S23 Ultra"
+    Device;  "Galaxy S23 Ultra"
+    Device;  "Poco X3 Pro"
+    Device;  "Poco M4 Pro"
+    Device;  "Pixel 7 "
+    Device;  "Pixel 7 Pro"
 
  Sending requests for the specified available-uploaded-application'(s) LambdaTest live data...
  Sending requests for status of available-network-connection specified uploaded application LambdaTest live data...
 
  Currently requesting network-status for the following uploaded-application:
- "app_id":"APP101605731695688506635546","name":"bolt-mirror-appv1","type":"android",
- "app_url":"lt://APP101605731695688506635546"
- "url":"https://prod-falcon-lt-app-artefacts-v1.s3-accelerate.amazonaws.com/prod/1520084/2023/09/26/boltmirrorappapk-    
- 1695688505434.apk",
+ "app_id":"APP134533169511111135546","name":"testing-app-ppv1","type":"android",
+ "app_url":"lt://APP13453316956811151111116"
+ "url":"https://prod-falcon-lt-app-artefacts-v1.s3-accelerate.amazonaws.com/prod/1520084/2023/09/26/test-app-test.apk",
  custom_id:null
 
  -----------------------------LIVE DATA REQUEST----------------------------------------
  ----------------------------------RESULTS---------------------------------------------
  Live Available Specified LambdaTest Uploaded-App: 'bolt-mirror-appv1',
- app_name: 'bolt-mirror-appv1', is present and available
- app_id: 'APP101605731695688506635546', is present and available
+ app_name: 'testing-app-ppv1', is present and available
+ app_id: 'APP13453316951111116635546', is present and available
  app_type: 'android' is present and available
- app_url: 'lt://APP101605731695688506635546' is present and available
+ app_url: 'lt://APP1345331696565111111116' is present and available
 
  Live Available LambdaTest 'Real Devices':
  Device: 'Oppo A15' is present and available.       Device OS: 10
@@ -125,25 +124,21 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
  JSON Content:
  {
      "platformName": "android",
-     "deviceName": "Huawei P30 Pro",
-     "platformVersion": "10",
-     "app": "lt://APP101605731695688506635546",
+     "deviceName": "Pixel 7",
+     "platformVersion": "11",
+     "app": "lt://APP1345331695688506635546",
      "devicelog": true,
      "visual": true,
      "network": true,
      "video": true,
      "build": "Huawei P30 Pro",
      "name": "Huawei P30 Pro",
-     "project": "project-bolt",
+     "project": "project-goodluck!",
      "deviceOrientation": "portrait",
-     "geoLocation": "NL",
-     "location": {
-         "lat": "52.3791283",
-         "long": "4.900272"
-     },
+     "geoLocation": "US",
      "language": "en",
      "locale": "en",
-     "idleTimeout": 2700,
+     "idleTimeout": 600,
      "isRealMobile": true
  }
 
