@@ -15,14 +15,8 @@ To install the necessary dependencies, you can use pip:
 
    ```bash
    pip install -r requirements.txt
-
-Usage
-Usage:
-
-Clone the repository or download the script.
-
-Open the script and replace the following placeholders with your LambdaTest credentials and app/device information:
-   ```python3 
+   ```
+   ```python
    LAMBDATEST_ACCESS_KEY = "LAMBDATEST_ACCESS_KEY_HERE"
    LAMBDATEST_USERNAME = "LAMBDATEST_USERNAME_HERE"
    BASE64_USERNAME_ACCESSKEY = "BASE64_USERNAME_ACCESSKEY_HERE"
@@ -39,3 +33,6 @@ Open the script and replace the following placeholders with your LambdaTest cred
    real_device_name_04 = "Poco M4 Pro"
    real_device_name_05 = "Pixel 7"
    real_device_name_06 = "Pixel 7 Pro"
+   ```
+
+
