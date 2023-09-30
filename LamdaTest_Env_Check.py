@@ -58,7 +58,7 @@ def check_lambdatest_environment():
     directory_path = "/Users/user/path/to/LamdaTest_Env_Check_results"
 
 
-    # Send the first authenticated GET request using requests library
+    # Send the authenticated GET request using requests library
     print(f"{colors.BLUE}Sending requests for the devices available-devices LamdaTest live data...{colors.END}")
     print(f"{colors.RED}Currently requesting status for following Devices;{colors.END}")
     print(f"{colors.GREEN}Device; '{real_device_name_01}' {colors.END}")
@@ -83,8 +83,10 @@ def check_lambdatest_environment():
         print(devices_available_response.text)
 
 
-    # Send the second authenticated GET request using requests library
+    # Send the authenticated GET request using requests library
     print(f"{colors.BLUE}Sending requests for the specified available-uploaded-application'(s) LamdaTest live data...{colors.END}")
+    print(f"{colors.RED}Currently requesting for following uploaded-application;{colors.END}")
+    print(f'{colors.GREEN}"app_id":"{app_id}","name":"{app_name}"{colors.END}')
     uploaded_app_available_response = requests.get(uploaded_app_available_url, auth=auth_header)
 
     # Check the response status code
@@ -101,7 +103,7 @@ def check_lambdatest_environment():
 
     # Define the headers including the Authorization header for uploaded-app LamdaTest-servers
     headers = {
-        "Authorization": f"Basic {BASE64_USERNAME_ACCESSKEY}",   # This is a Base64-encoded string that includes your username and API access key. The format is Basic username:access_key
+        "Authorization": f"Basic {BASE64_USERNAME_ACCESSKEY}",
         "Content-Type": "application/json"
     }
 
@@ -110,7 +112,7 @@ def check_lambdatest_environment():
         "appId": app_id
     }
 
-    # Send the third GET request with headers and payload for network-status uploaded app
+    # Send the POST request with headers and payload for network-status uploaded app
     print(f"{colors.BLUE}Sending requests for status of available-network-connection specified uploaded application LamdaTest live data...{colors.END}")
     print(f"{colors.RED}Currently requesting network-status for following uploaded-application;{colors.END}")
     print(f'{colors.GREEN}"app_id":"{app_id}","name":"{app_name}","type":"{app_type}","app_url":"{app_url}"{colors.END}')
@@ -209,12 +211,23 @@ def check_lambdatest_environment():
         # Check if all specified devices are not available
         if all(not device_info['available'] for device_info in device_availability.values()):
             print(f"{colors.BLUE}All specified devices are currently not available{colors.END}")
+            raise Exception(f"{colors.BLUE}All specified devices are currently not available{colors.END}. Stopping execution.")
 
     else:
         print(
             f"{colors.BLUE}Request failed to send with status code {devices_available_response.status_code}{colors.END}")
 
-    if all([device_availability[real_device_name_01] or device_availability[real_device_name_02] or device_availability[real_device_name_03] or device_availability[real_device_name_04] or device_availability[real_device_name_05] or device_availability[real_device_name_06], app_availability[app_id and app_name and app_type], network_status]):    # If all three necessary dependencies are met (so  == True), we take action!
+    # Check if all specified devices are not available or not present in the dictionary
+    if all(
+            not device_info.get('available', False)
+            for device_info in device_availability.values()
+    ) or any(
+        device_name not in device_availability
+        for device_name in devices_to_check
+    ):
+        print(f"{colors.BLUE}Not all specified devices are currently available{colors.END}")
+
+        # If all three necessary dependencies are met (so  == True), we take action!
         print(f"{colors.CYAN}--------------------------------------------------------------------------- {colors.END}")
         print(f"{colors.CYAN}All conditions are met. Ready to spin-up wanted available 'Real Device'! {colors.END}")
         print(f"{colors.CYAN}Specified Uploaded-App;{colors.YELLOW}'AVAILABLE',{colors.END} {colors.END}")
@@ -254,12 +267,16 @@ def check_lambdatest_environment():
         "video": True,
         "build": "{device_name_variable}",
         "name": "{device_name_variable}",
-        "project": "project-goodluck!",
+        "project": "project-bolt",
         "deviceOrientation": "portrait",
-        "geoLocation": "US",
+        "geoLocation": "NL",
+        "location": {
+            "lat": "52.3791283",
+            "long": "4.900272"
+        },
         "language": "en",
         "locale": "en",
-        "idleTimeout": 600,
+        "idleTimeout": 2700,
         "isRealMobile": True
     }
 
@@ -304,8 +321,8 @@ def fetch_available_devices():
     # This has the most recent/live data fetched for available devices on the LamdaTest platform
     # This function is lightening-fast! So we can call it whenever within the code.
 
-    # Specify the directory path
-    directory_path = "/Users/user/path/to/LamdaTest_Env_Check_results"
+    # Define the .json file available devices output directory:
+    directory_path = "/Users/yuriaankarpinski/PycharmProjects/bolt-lamdatest/LT-appium-python/LamdaTest_Env_Check_results"
 
     # List all JSON files in the directory
     json_files = glob.glob(os.path.join(directory_path, "*.json"))
