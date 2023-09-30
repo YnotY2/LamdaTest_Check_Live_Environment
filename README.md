@@ -15,3 +15,9 @@ To install the necessary dependencies, you can use pip:
 
 ```bash
 pip install -r requirements.txt
+
+Usage:
+
+1. Clone the repository or download the script.
+
+2. Open the script and replace the following placeholders with your LambdaTest credentials and app/device information:
