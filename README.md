@@ -151,10 +151,8 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
  This File Stores Live Available Devices, *all needed information*
 ```
 ## Blessed 0-0
-
-Don't worry the ouput is more colorfull on the real terminal :D
-YnotY2 
-0-0
+```---```
+Don't worry the ouput is more colorfull on the real terminal. YnotY2 
 
 
 
