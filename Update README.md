@@ -150,10 +150,11 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
  Most Recently Created JSON File: 'output_available_devices_2023_09_30%_01:34:42uC.json'
  This File Stores Live Available Devices, *all needed information*
 ```
+## Blessed 0-0
+
 Don't worry the ouput is more colorfull on the real terminal :D
 YnotY2 
-Blessed, 0-0
-
+0-0
 
 
 
