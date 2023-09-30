@@ -30,9 +30,11 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
    ```bash
    curl -u "LAMDATEST_USERNAME:LADMATEST_ACCESSKEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/user/path/to/APP_NAME.apk"" -F "name="APP_NAME""
    ```
+   
    You will recevie the needed credentials for following variables:
    `app_id`, `app_url`, `app_name`, `app_type`, 
    These parameters are used to check *your* LamdaTest Environment 0-0
+   
 
 3. **Install requirements**
 
@@ -67,6 +69,15 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
    real_device_name_05 = "Pixel 7"
    real_device_name_06 = "Pixel 7 Pro"
    ```
+
+5, **Run LamdaTest_Env_Check.py**
+   ```bash
+   python3 LamdaTest_Env_Check.py
+   ```
+
+## Ouput 
+
+
    
 
 
