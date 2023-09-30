@@ -2,9 +2,10 @@
 
 ## Overview
 
-The LambdaTest Environment Check Tool is a Python script designed to determine whether the conditions are met to utilize LambdaTest "Real Devices." 
-It conducts checks for the availability of:
--specified uploaded apps, network-uploaded apps, and specified devices.
+The LambdaTest Environment Check Tool is a Python script designed to determine whether the conditions are met to utilize LambdaTest "Real Devices." It conducts checks for the availability of specified uploaded apps, network-uploaded apps, and specified devices.
+
+Not only will we print LamdaTest platform availability within Terminal-window. We will also ouput a .json-file containing recently fetched *available-devices*. *0-0*
+
 
 ## Prerequisites
 
@@ -77,79 +78,81 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
 
 ## Ouput 
 ```bash
-# Sending requests for the devices available-devices LambdaTest live data...
-# Currently requesting status for the following Devices:
-# Device: 'Huawei P20 Pro'
-# Device: 'Huawei P30'
-# Device: 'Huawei P30 Pro'
-# Device: 'Huawei Mate 20 Pro'
-# Device: 'Oppo A15'
-# Device: 'Oppo F17'
+ Sending requests for the devices available-devices LambdaTest live data...
+ Currently requesting status for the following Devices:
+ Device: 'Huawei P20 Pro'
+ Device: 'Huawei P30'
+ Device: 'Huawei P30 Pro'
+ Device: 'Huawei Mate 20 Pro'
+ Device: 'Oppo A15'
+ Device: 'Oppo F17'
 
-# Sending requests for the specified available-uploaded-application'(s) LambdaTest live data...
-# Sending requests for status of available-network-connection specified uploaded application LambdaTest live data...
+ Sending requests for the specified available-uploaded-application'(s) LambdaTest live data...
+ Sending requests for status of available-network-connection specified uploaded application LambdaTest live data...
 
-# Currently requesting network-status for the following uploaded-application:
-# "app_id":"APP101605731695688506635546","name":"bolt-mirror-appv1","type":"android",
-# "app_url":"lt://APP101605731695688506635546"
-# "url":"https://prod-falcon-lt-app-artefacts-v1.s3-accelerate.amazonaws.com/prod/1520084/2023/09/26/boltmirrorappapk-1695688505434.apk",
-# custom_id:null
+ Currently requesting network-status for the following uploaded-application:
+ "app_id":"APP101605731695688506635546","name":"bolt-mirror-appv1","type":"android",
+ "app_url":"lt://APP101605731695688506635546"
+ "url":"https://prod-falcon-lt-app-artefacts-v1.s3-accelerate.amazonaws.com/prod/1520084/2023/09/26/boltmirrorappapk-    
+ 1695688505434.apk",
+ custom_id:null
 
-# -----------------------------LIVE DATA REQUEST----------------------------------------
+ -----------------------------LIVE DATA REQUEST----------------------------------------
+ ----------------------------------RESULTS---------------------------------------------
+ Live Available Specified LambdaTest Uploaded-App: 'bolt-mirror-appv1',
+ app_name: 'bolt-mirror-appv1', is present and available
+ app_id: 'APP101605731695688506635546', is present and available
+ app_type: 'android' is present and available
+ app_url: 'lt://APP101605731695688506635546' is present and available
 
-# ----------------------------RESULTS--------------------------------------------------
-# Live Available Specified LambdaTest Uploaded-App: 'bolt-mirror-appv1',
-# app_name: 'bolt-mirror-appv1', is present and available
-# app_id: 'APP101605731695688506635546', is present and available
-# app_type: 'android' is present and available
-# app_url: 'lt://APP101605731695688506635546' is present and available
+ Live Available LambdaTest 'Real Devices':
+ Device: 'Oppo A15' is present and available.       Device OS: 10
+ Device: 'Huawei P30' is present and available.       Device OS: 10
+ Device: 'Huawei P30 Pro' is present and available.       Device OS: 10
+ Device: 'Huawei P20 Pro' is present and available.       Device OS: 10
+ Device: 'Oppo F17' is present and available.       Device OS: 10
+ --------------------------------------------------------------------------- 
+ All conditions are met. Ready to spin-up the wanted available 'Real Device'! 
+ Specified Uploaded-App: 'AVAILABLE', 
+ Specified Network Uploaded-App: 'AVAILABLE', 
+ Specified Device(s): 'AVAILABLE', 
+ --------------------------------------------------------------------------- 
 
-# ----------------------------Live Available LambdaTest 'Real Devices':
-# Device: 'Oppo A15' is present and available.       Device OS: 10
-# Device: 'Huawei P30' is present and available.       Device OS: 10
-# Device: 'Huawei P30 Pro' is present and available.       Device OS: 10
-# Device: 'Huawei P20 Pro' is present and available.       Device OS: 10
-# Device: 'Oppo F17' is present and available.       Device OS: 10
-# --------------------------------------------------------------------------- 
+ Successfully saved the current randomly chosen available data/info
+ needed for spinning up the device: 'Huawei P30 Pro' 
+ Saved Within JSON file: 'output_available_devices_2023_09_30%_01:34:42uC.json'
 
-# All conditions are met. Ready to spin-up the wanted available 'Real Device'! 
-# Specified Uploaded-App: 'AVAILABLE', 
-# Specified Network Uploaded-App: 'AVAILABLE', 
-# Specified Device(s): 'AVAILABLE', 
-# --------------------------------------------------------------------------- 
+ JSON Content:
+ {
+     "platformName": "android",
+     "deviceName": "Huawei P30 Pro",
+     "platformVersion": "10",
+     "app": "lt://APP101605731695688506635546",
+     "devicelog": true,
+     "visual": true,
+     "network": true,
+     "video": true,
+     "build": "Huawei P30 Pro",
+     "name": "Huawei P30 Pro",
+     "project": "project-bolt",
+     "deviceOrientation": "portrait",
+     "geoLocation": "NL",
+     "location": {
+         "lat": "52.3791283",
+         "long": "4.900272"
+     },
+     "language": "en",
+     "locale": "en",
+     "idleTimeout": 2700,
+     "isRealMobile": true
+ }
 
-# Successfully saved the current randomly chosen available data/info
-# needed for spinning up the device: 'Huawei P30 Pro' 
-# Saved Within JSON file: 'output_available_devices_2023_09_30%_01:34:42uC.json'
-
-# JSON Content:
-# {
-#     "platformName": "android",
-#     "deviceName": "Huawei P30 Pro",
-#     "platformVersion": "10",
-#     "app": "lt://APP101605731695688506635546",
-#     "devicelog": true,
-#     "visual": true,
-#     "network": true,
-#     "video": true,
-#     "build": "Huawei P30 Pro",
-#     "name": "Huawei P30 Pro",
-#     "project": "project-bolt",
-#     "deviceOrientation": "portrait",
-#     "geoLocation": "NL",
-#     "location": {
-#         "lat": "52.3791283",
-#         "long": "4.900272"
-#     },
-#     "language": "en",
-#     "locale": "en",
-#     "idleTimeout": 2700,
-#     "isRealMobile": true
-# }
-
-# Most Recently Created JSON File: 'output_available_devices_2023_09_30%_01:34:42uC.json'
-# This File Stores Live Available Devices, *all needed information*
+ Most Recently Created JSON File: 'output_available_devices_2023_09_30%_01:34:42uC.json'
+ This File Stores Live Available Devices, *all needed information*
 ```
+Don't worry the ouput is more colorfull on the real terminal :D
+YnotY2 
+Blessed, 0-0
 
 
 
