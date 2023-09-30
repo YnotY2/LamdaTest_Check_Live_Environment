@@ -13,16 +13,16 @@ Before using this tool, ensure you have the following prerequisites:
 
 To install the necessary dependencies, you can use pip:
 
-```bash
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
+Usage
 Usage:
 
-1. Clone the repository or download the script.
+Clone the repository or download the script.
 
-2. Open the script and replace the following placeholders with your LambdaTest credentials and app/device information:
-
-   ```python
+Open the script and replace the following placeholders with your LambdaTest credentials and app/device information:
+   ```python3 
    LAMBDATEST_ACCESS_KEY = "LAMBDATEST_ACCESS_KEY_HERE"
    LAMBDATEST_USERNAME = "LAMBDATEST_USERNAME_HERE"
    BASE64_USERNAME_ACCESSKEY = "BASE64_USERNAME_ACCESSKEY_HERE"
