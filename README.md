@@ -37,7 +37,7 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
    These parameters are used to check *your* LamdaTest Environment 0-0
    
 
-3. **Install requirements**
+2. **Install requirements**
 
    Within your saved LamdaTest_Env_Check.py directory, open terminal and paste command:
 
@@ -45,7 +45,7 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
    pip install -r requirements.txt
    ```
 
-4. **Set -credentials**
+3. **Set -credentials**
 
    You can easily set the credentials within LamdaTest_Env_Check.py:
 
@@ -71,7 +71,7 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
    real_device_name_06 = "Pixel 7 Pro"
    ```
 
-5, **Run LamdaTest_Env_Check.py**
+4. **Run LamdaTest_Env_Check.py**
    ```bash
    python3 LamdaTest_Env_Check.py
    ```
