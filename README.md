@@ -2,7 +2,9 @@
 
 ## Overview
 
-The LambdaTest Environment Check Tool is a Python script designed to determine whether the conditions are met to utilize LambdaTest "Real Devices." It conducts checks for the availability of specified uploaded apps, network-uploaded apps, and specified devices.
+The LambdaTest Environment Check Tool is a Python script designed to determine whether the conditions are met to utilize LambdaTest "Real Devices." 
+It conducts checks for the availability of:
+-specified uploaded apps, network-uploaded apps, and specified devices.
 
 ## Prerequisites
 
@@ -20,18 +22,29 @@ To install the necessary dependencies, you can use pip:
 ## Usage
 
 To use the **LamdaTest_Env_Check.py**, follow these steps:
+1. **Upload your Application To LamdaTest-Platform**
 
-1. **Install requirements**
+   Documentation; https://www.lambdatest.com/support/docs/appium-java/
 
-   Within your saved python3 code directory open terminal and paste command:
+   Using App from local system:
+   ```bash
+   curl -u "LAMDATEST_USERNAME:LADMATEST_ACCESSKEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/user/path/to/APP_NAME.apk"" -F "name="APP_NAME""
+   ```
+   You will recevie the needed credentials for following variables:
+   `app_id`, `app_url`, `app_name`, `app_type`, 
+   These parameters are used to check *your* LamdaTest Environment 0-0
+
+3. **Install requirements**
+
+   Within your saved LamdaTest_Env_Check.py directory, open terminal and paste command:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set -credentials**
+4. **Set -credentials**
 
-   You can easily set the credentials within python3 code:
+   You can easily set the credentials within LamdaTest_Env_Check.py:
 
    ```python
    LAMBDATEST_ACCESS_KEY = "LAMBDATEST_ACCESS_KEY_HERE"
@@ -54,5 +67,6 @@ To use the **LamdaTest_Env_Check.py**, follow these steps:
    real_device_name_05 = "Pixel 7"
    real_device_name_06 = "Pixel 7 Pro"
    ```
+   
 
 
